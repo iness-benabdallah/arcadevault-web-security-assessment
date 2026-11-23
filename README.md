@@ -1,24 +1,27 @@
 # ArcadeVault Web Application Security Assessment
 
-A black-box penetration test of a deliberately vulnerable e-commerce application, documented against the OWASP Top 10:2025.
+A black-box penetration test of a deliberately vulnerable e-commerce application, documented against the **OWASP Top 10:2025**.
 
 ---
 
-## Overview
+## 📌 Overview
 
-This project covers a black-box security assessment of the ArcadeVault web shop, a video-game store built for security training. The test covered the storefront, REST API, admin back-office, and mod registry. Twelve weaknesses were identified and rated with CVSS 3.1.
+This project covers a black-box security assessment of the ArcadeVault web shop, a video-game store built for security training. The assessment covered the storefront, REST API, admin back-office, and mod registry.
 
-## Scope and Method
+A total of **12 security weaknesses** were identified, documented, and rated using CVSS 3.1.
 
-- **Target:** ArcadeVault running locally in Docker on port 9098
-- **Approach:** Black box, with access to the running application only
+## 🎯 Scope & Methodology
+
+- **Target:** ArcadeVault running locally in Docker on port `9098`
+- **Approach:** Black-box testing, with access to the running application only
 - **Methodology:** BSI Durchführungskonzept für Penetrationstests and the OWASP Web Security Testing Guide
-- **Tools:** Burp Suite (Proxy, Repeater, Intruder), curl, John the Ripper, Kali Linux
-- **Rating:** CVSS 3.1 base scores, weaknesses mapped to CWE
+- **Tools:** Burp Suite (Proxy, Repeater, Intruder), cURL, John the Ripper, Kali Linux
+- **Risk Assessment:** CVSS 3.1 base scores
+- **Classification:** Common Weakness Enumeration (CWE)
 
 ---
 
-## Findings Summary
+## 📊 Findings Summary
 
 | ID | Finding | OWASP Category | Severity |
 |---|---|---|---|
@@ -37,7 +40,7 @@ This project covers a black-box security assessment of the ArcadeVault web shop,
 
 ---
 
-## Findings in Detail
+## 🔎 Findings in Detail
 
 ### AV-01: IDOR on Order Lookup
 **CWE-639 · CVSS 5.3 (Medium) · A01**
@@ -101,19 +104,28 @@ The login displayed an MFA prompt, but the session kept admin rights. `GET /api/
 
 ---
 
-## Key Takeaways
+## 💡 Key Takeaways
 
 - Enforce authorisation on the server for every endpoint, not only in the user interface.
 - Never return secrets in responses or logs, and rotate any that were exposed.
 - Store passwords with a slow, salted hash, and enforce MFA server-side.
 - Encode output and harden XML parsers and error handling.
 
-## Skills Demonstrated
+## 🧰 Skills Demonstrated
 
-Web application penetration testing, OWASP Top 10 analysis, Burp Suite, REST API testing, CVSS 3.1 scoring, CWE mapping, technical report writing.
+- Web Application Penetration Testing
+- OWASP Top 10 Analysis
+- Burp Suite
+- REST API Security Testing
+- CVSS 3.1 Risk Assessment
+- CWE Classification
+- Vulnerability Analysis
+- Technical Security Reporting
 
 ---
 
-## Note
+## Disclaimer
 
-Testing was performed against a deliberately vulnerable local training lab as part of a university course. No real systems, customers, or production data were involved. Flags, credentials, and personal data are intentionally omitted.
+Testing was performed against a deliberately vulnerable local training lab as part of a university course. No real systems, customers, or production data were involved.
+
+Flags, credentials, and personal data are intentionally omitted.
