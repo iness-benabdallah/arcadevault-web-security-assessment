@@ -1,5 +1,6 @@
 
 ArcadeVault Web Application Security Assessment
+
 A penetration test of a deliberately vulnerable e-commerce web application, performed against a local training lab and documented against the OWASP Top 10:2025.
 
 Overview:
